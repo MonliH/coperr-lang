@@ -5,10 +5,18 @@ A programming language made in python 3. Inspired by C++, C, Java, and mainly Py
 * [Python 3](https://www.python.org/downloads/release/python-368/)
 * [PLY](https://www.dabeaz.com/ply/)
 
+```
+pip3 install ply
+
+OR
+
+pip install ply
+```
+
 ## Using Coperr
 To use coperr, simply run the run the coperr.py file in the command line.
 
-On macos of linux:
+On MacOS of Linux:
 
 `python3 coperr.py coperr_file.cprr`
 
