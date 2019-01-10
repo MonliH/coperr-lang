@@ -17,10 +17,14 @@ On windows, add python to your PATH then run:
 `python coperr.py coperr_file.cprr`
 
 ## Basic Syntax
+This program would output "x is equal to 10!".
 ```
 x = 10;
 if (x == 10) {
   print("x is equal to 10!");
 }
 ```
+
+## Documentation
+Take a look at the [wiki]() for the documentation.
 
