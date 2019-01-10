@@ -26,5 +26,5 @@ if (x == 10) {
 ```
 
 ## Documentation
-Take a look at the [wiki]() for the documentation.
+Take a look at the [readthedocs](https://coperr-lang.readthedocs.io/en/latest/) for the documentation. (not complete)
 
