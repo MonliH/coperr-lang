@@ -7,9 +7,7 @@ A programming language made in python 3. Inspired by C++, C, Java, and mainly Py
 
 ```
 pip3 install ply
-
 OR
-
 pip install ply
 ```
 
