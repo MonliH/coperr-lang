@@ -106,3 +106,6 @@ venv.bak/
 # ply files
 parsetab.py
 parser.out
+
+# test cobalt files
+test.cblt
