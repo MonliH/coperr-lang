@@ -1,5 +1,6 @@
 # Coperr Language
-This Programming language is no longer suported (I am remaking it in SLY which is newer)
+### This Programming language is no longer suported (I am remaking it in [Lark](https://github.com/lark-parser/lark) which is newer).
+
 A programming language made in python 3. Inspired by C++, C, Java, and mainly Python.
 
 ## Dependencies
