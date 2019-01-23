@@ -3,6 +3,16 @@ from lexer import *
 import ply.yacc as yacc
 
 
+def raise_error(error_name, detail, line, column, code):
+    print(f"Coperr.{error_name}: {detail} at -l{line}c{column}-\n\"{code}\"")
+
+    quit()
+
+
+def toString(args):
+    return "".join(args)
+
+
 def c_parse():
 
     # MAIN PROGRAM
@@ -113,7 +123,9 @@ def c_parse():
         """math : expression '/' expression
                 | expression '*' expression
                 | expression '-' expression
-                | expression '+' expression"""
+                | expression '+' expression
+                | expression '%' expression
+                | expression '^' expression"""
 
         p[0] = [p[1], str(p[2]), p[3]]
 
@@ -138,13 +150,39 @@ def c_parse():
         """bool_expression : bool_expression '|' bool_expression"""
         p[0] = [p[1], "OR", p[3]]
 
+    def p_bool_expression5(p):
+        """bool_expression : number '>' number
+                           | number '<' number"""
+        p[0] = ["BOOL_MATH_COMPARE", p[1],  p[2], p[3]]
+
     # NILL / NONE / NULL
     def p_nill(p):
         """nill : NILL"""
         p[0] = ["NILL", p[1]]
 
+    def p_number(p):
+        """number : INT"""
+        p[0] = ["INT", p[1]]
+
+    def p_number1(p):
+        """number : FLOAT"""
+        p[0] = ["FLOAT", p[1]]
+
+    def p_number2(p):
+        """number : object"""
+        p[0] = p[1]
+
+    """
+    # ERROR HANDLING
+    def p_function_call_error(p):
+        "function_call_error : object '(' error ')' ';'"
+        raise_error("FunctionInputNillError", "Function input cannot not be empty, instead pass nill; to the function",
+                    p.lineno(0), p.lexpos(0), toString([p[1], p[2], p[3]]))
+
+    """
+
     def p_error(p):
-        print("Syntax Error Found")
+        print("Coperr.SyntaxError: Unknown Syntax Error")
         quit()
 
     return yacc.yacc()

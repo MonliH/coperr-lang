@@ -5,6 +5,8 @@ reserved = {
     "else": "ELSE",
     "if": "IF",
     "nill": "NILL",
+    "fun": "FUN",
+    "give": "GIVE"
 }
 
 tokens = [
@@ -18,7 +20,7 @@ tokens = [
 ] + list(reserved.values())
 
 
-literals = ["+", "-", "*", "/", "(", ")", "=", ";", "{", "}", ",", ":", "|", "&", "!"]
+literals = ["+", "-", "*", "/", "(", ")", "=", ";", "{", "}", ",", ":", "|", "&", "!", "<", ">", "%"]
 
 
 def c_lexer():
@@ -27,7 +29,6 @@ def c_lexer():
 
     def t_COMMENT(t):
         r"\#.*"
-        pass
 
     def t_STRING(t):
         r"\"[_A-Za-z0-9 \t\n!@#$%^&*()_+;:'<>,./?=]+\""
@@ -62,14 +63,10 @@ def c_lexer():
         t.value = int(t.value)
         return t
 
-    def t_newline(t):
-        r"\n+"
-        t.lexer.lineno += len(t.value)
-
     t_ignore = ' \t'
 
     def t_error(t):
-        print("Unexpected character {}".format(t.value[0]))
+        print("Coperr.UnexpectedCharacter {}".format(t.value[0]))
         t.lexer.skip(1)
 
     return lex.lex()  # errorlog=lex.NullLogger() to not show warnings

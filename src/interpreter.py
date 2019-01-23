@@ -1,5 +1,5 @@
 import parse
-# import pprint
+import pprint
 
 
 def get_data(file):
@@ -9,6 +9,7 @@ def get_data(file):
 
     while True:
         tok = lexer.token()
+        print(tok)
         if not tok:
             break
     parser = parse.c_parse()
@@ -29,6 +30,10 @@ def eval_math(tree, variables):
             return eval_math(tree[0], variables) + eval_math(tree[2], variables)
         elif tree[1] == "-":
             return eval_math(tree[0], variables) - eval_math(tree[2], variables)
+        elif tree[1] == "%":
+            return eval_math(tree[0], variables) % eval_math(tree[2], variables)
+        elif tree[1] == "^":
+            return eval_math(tree[0], variables) ^ eval_math(tree[2], variables)
 
 
 def eval_expression(tree, variables):
@@ -42,11 +47,11 @@ def eval_expression(tree, variables):
         print("VariableError: variable referenced before assignment!")
         quit()
 
-    elif tree[1] in ["/", "*", "+", "-"]:
+    elif tree[1] in ["/", "*", "+", "-", "%", "^"]:
         return eval_math(tree, variables)
 
     else:
-        print("InternalExprEvaluateError: Attempted to evaluate expression that is not implemented")
+        print("Coperr.InternalExprEvaluateError: Attempted to evaluate expression that is not implemented")
         quit()
 
 
@@ -72,6 +77,19 @@ def eval_bool(tree, variables):
             return True
         else:
             return False
+
+    elif tree[0] == "BOOL_MATH_COMPARE":
+        if tree[2] == ">":
+            if eval_expression(tree[1], variables) > eval_expression(tree[3], variables):
+                return True
+            else:
+                return False
+
+        elif tree[2] == "<":
+            if eval_expression(tree[1], variables) < eval_expression(tree[3], variables):
+                return True
+            else:
+                return False
 
     elif type(tree[0]) is list and tree[1] in ["AND", "OR"] and type(tree[2]) is list:
         arg1 = eval_bool(tree[0], variables)
@@ -104,7 +122,7 @@ def eval_bool(tree, variables):
         return eval_expression(tree, variables)
 
     else:
-        print("InternalBoolEvaluateError: used boolean statement that is invalid/has not been implemented")
+        print("Coperr.InternalBoolEvaluateError: used boolean statement that is invalid/has not been implemented")
         quit()
 
 
@@ -135,8 +153,8 @@ def eval_conditional(tree, variables):
 
 def eval_tree(tree, variables={}):
     # for debugging
-    # pp = pprint.PrettyPrinter(indent=4)
-    # pp.pprint(tree)
+    pp = pprint.PrettyPrinter(indent=4)
+    pp.pprint(tree)
 
     action_number = len(tree)
 
