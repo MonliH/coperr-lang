@@ -22,7 +22,7 @@ Guide
 Design Principles
 ^^^^^^^^^^^^^^^^^
 
-- **Make it easy to read.** Copper has been designed to be easy to read, and easy to learn.
+- **Be easy to read.** Copper has been designed to be easy to read, and easy to learn.
   It is similar to Python 3, making it easier to learn for those who know the language.
 
 - **Be faster then Python 3.** Coperr has a pure python implementation, which means you can use modules like `Pypy <https://pypy.org/>`_ and `CPython <https://github.com/python/cpython>`_.
