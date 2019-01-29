@@ -1,5 +1,5 @@
-Examples of Coperr programs
-===========================
+Examples
+========
 
 Hello World
 ^^^^^^^^^^^
