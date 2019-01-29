@@ -69,4 +69,4 @@ def c_lexer():
         print("Coperr.UnexpectedCharacter {}".format(t.value[0]))
         t.lexer.skip(1)
 
-    return lex.lex()  # errorlog=lex.NullLogger() to not show warnings
+    return lex.lex(errorlog=lex.NullLogger())  # errorlog=lex.NullLogger() to not show warnings

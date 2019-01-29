@@ -9,7 +9,7 @@ def get_data(file):
 
     while True:
         tok = lexer.token()
-        print(tok)
+        # print(tok)
         if not tok:
             break
     parser = parse.c_parse()
@@ -153,8 +153,8 @@ def eval_conditional(tree, variables):
 
 def eval_tree(tree, variables={}):
     # for debugging
-    pp = pprint.PrettyPrinter(indent=4)
-    pp.pprint(tree)
+    # pp = pprint.PrettyPrinter(indent=4)
+    # pp.pprint(tree)
 
     action_number = len(tree)
 
