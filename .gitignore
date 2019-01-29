@@ -109,3 +109,6 @@ parser.out
 
 # test cobalt files
 test.cblt
+
+# Jetbrains Files
+.idea/
