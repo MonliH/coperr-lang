@@ -6,8 +6,8 @@ Welcome to Coperr's Documentation!
 
 This is the official documentation for `coperr-lang <https://github.com/MonliH/coperr-lang>`_.
 Coperr is a dynamically typed programming language implemented in `Python 3 <https://www.python.org/>`_.
-It is inspired by C++, C, Java, and mainly Python. Coperr uses a LALR(1)
- parser to pare its grammar.
+It is inspired by C++, C, Java, and mainly Python. Coperr uses a LALR(1) parser to pare its grammar.
+
 Design Principles
 ^^^^^^^^^^^^^^^^^
 
