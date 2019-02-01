@@ -8,7 +8,7 @@ Hello world in Coperr:
 
 ::
 
-    print("Hello, World!");
+    print("Hello, World!"); # Prints hello world to the screen
 
 This outputs:
 
@@ -23,13 +23,13 @@ Some examples of how math works (and order of operations):
 
 ::
 
-    print(10/23);
-    print(1+2);
-    print(10-2);
-    print(100/2);
-    print(33*2);
-    print(10%3);
-    print(10+3/2);
+    print(10/23); # Division (outputs float)
+    print(1+2); # Addition
+    print(10-2); # Subtraction
+    print(100/2); # Division (outputs int)
+    print(33*2); # Multiplication
+    print(10%3); # Modulus operator
+    print(10+3/2); # Order of operations example
 
 Outputs:
 
