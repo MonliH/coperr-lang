@@ -14,7 +14,7 @@ pip install ply
 ## Using Coperr
 To use coperr, simply run the run the coperr.py file in the command line.
 
-On MacOS of Linux:
+On MacOS or Linux:
 
 `python3 coperr.py coperr_file.cprr`
 
