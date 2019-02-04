@@ -107,8 +107,8 @@ venv.bak/
 parsetab.py
 parser.out
 
-# test cobalt files
-test.cblt
+# test coperr files
+test.cprr
 
 # Jetbrains Files
 .idea/
