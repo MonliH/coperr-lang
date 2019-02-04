@@ -1,10 +1,9 @@
 # Coperr
-A programming language made in python 3. Inspired by C++, C, Java, and mainly Python. **Check out the documentation [here](https://coperr-lang.readthedocs.io/en/latest/)**.
-
+A programming language made in python 3. Inspired by C++, C, Java, and mainly Python.
 ![Coperr's Logo](photos/logo.png)
 
 ## Documentation
-Take a look at the [readthedocs](https://coperr-lang.readthedocs.io/en/latest/) for the documentation. (not complete)
+Take a look at the [readthedocs](https://coperr-lang.readthedocs.io/en/latest/) for the main website/documentation. (not complete)
 
 ## Dependencies
 Dependencies for coperr are Python 3 and PLY (Python-Lex-Yacc)
