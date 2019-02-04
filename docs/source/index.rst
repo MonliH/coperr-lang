@@ -1,5 +1,5 @@
 .. coperr documentation master file, created by
-   sphinx-quickstart on Tue Jan 29 14:17:07 2019.
+   Jonathan Li. 2019.
 
 Welcome to Coperr's Documentation!
 ==================================
