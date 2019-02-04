@@ -1,5 +1,6 @@
 # Coperr
 [![Documentation Status](https://readthedocs.org/projects/coperr-lang/badge/?version=latest)](https://coperr-lang.readthedocs.io/en/latest/?badge=latest)
+[![License](https://img.shields.io/badge/license-GPL%20v3.0-blue.svg)](https://choosealicense.com/licenses/gpl-3.0/)
 
 A programming language made in python 3. Inspired by C++, C, Java, and mainly Python.
 ![Coperr's Logo](photos/logo.png)
