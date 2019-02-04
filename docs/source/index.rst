@@ -12,7 +12,8 @@ Design Principles
 ^^^^^^^^^^^^^^^^^
 
 - **Be easy to read.** Copper has been designed to be easy to read, and easy to learn.
-  It is similar to Python 3, making it easier to learn for those who know the language.
+  It is similar to Python 3, making it easier to learn for those who know the language. It also does not use newlines (`Off-side Rule <https://en.wikipedia.org/wiki/Off-side_rule>`_)
+  which makes it easier to learn for people coming from languages like C and C++.
 
 - **Be faster then Python 3.** Coperr has a pure python implementation, which means you can use modules like `Pypy <https://pypy.org/>`_ and `CPython <https://github.com/python/cpython>`_.
   Use of Pypy or CPython can possibly make it even faster the normal Python 3 (even though it is written in Python 3).
