@@ -30,11 +30,17 @@ def c_parse():
         p[0] = [p[1]]
 
     def p_action(p):
-        """action : function_call ';'
+        """action : get_py ';'
+                  | function_call ';'
                   | variable_dec ';'
                   | conditional
                   | nill ';'"""
         p[0] = p[1]
+
+    # IMPORTS
+    def p_get_py(p):
+        """get_py : GETPY STRING"""
+        p[0] = ["GETPY", p[2]]
 
     # CONDITIONALS
     def p_conditional(p):

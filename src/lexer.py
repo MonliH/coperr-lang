@@ -6,7 +6,8 @@ reserved = {
     "if": "IF",
     "nill": "NILL",
     "fun": "FUN",
-    "give": "GIVE"
+    "give": "GIVE",
+    "getpy": "GETPY"
 }
 
 tokens = [

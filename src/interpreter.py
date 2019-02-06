@@ -1,5 +1,8 @@
 import parse
 import pprint
+import sys
+import os
+from importlib import import_module
 
 
 def get_data(file):
@@ -64,8 +67,8 @@ def eval_function(tree, variables):
     if function_name == "print":
         print(function_argument)
 
-    elif function_name == "input":
-        print(input(function_argument))
+    """elif function_name == "input":
+        print(input(function_argument))"""
 
 
 def eval_bool(tree, variables):
@@ -151,6 +154,19 @@ def eval_conditional(tree, variables):
             return None
 
 
+def eval_get_py(tree):
+    coperr_file = os.path.dirname(os.path.abspath(sys.argv[1]))
+    sys.path.insert(0, coperr_file)
+    file = import_module(tree[1])
+    variablespy = vars(file)
+
+    for i in list(variablespy.keys()):
+        if i.startswith("__"):
+            del variablespy[i]
+
+    return variablespy
+
+
 def eval_tree(tree, variables={}):
     # for debugging
     # pp = pprint.PrettyPrinter(indent=4)
@@ -168,6 +184,9 @@ def eval_tree(tree, variables={}):
 
         elif action_type == "CONDITIONAL":
             eval_conditional(tree[i][1:], variables)
+
+        elif action_type[0:3] == "GET":
+            variables.update(eval_get_py(tree[i]))
 
         elif action_type == "NILL":
             continue
